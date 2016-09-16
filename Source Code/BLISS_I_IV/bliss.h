@@ -1,5 +1,6 @@
 // bliss.h
-// 18-Jun-15  Markku-Juhani O. Saarinen <m.saarinen@qub.ac.uk>
+/*AUTHOR - agautam2@buffalo.edu | The State University of New York at Buffalo*/
+
 
 #ifndef BLISS_H
 #define BLISS_H
@@ -105,4 +106,3 @@ int bliss_verify(const bliss_signature_t *sign,
     const bliss_pubkey_t *pub);
 
 #endif
-
