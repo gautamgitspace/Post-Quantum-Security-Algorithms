@@ -1,0 +1,1306 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage{blindtext, graphicx}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{amsfonts}
+
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Post-Quantum Primtives For Constrained Environments}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Abhishek Gautam}
+%\IEEEauthorblockA{Dept. of Computer Science and\\Engineering\\
+%The State University of New York at Buffalo\\
+%agautam2@buffalo.edu}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+\author{\IEEEauthorblockN{Abhishek Gautam\IEEEauthorrefmark{1},
+Armaan Goyal\IEEEauthorrefmark{2},
+Riaz Munshi\IEEEauthorrefmark{3} and
+Vyom Chhabra\IEEEauthorrefmark{4}}
+Applied Cryptography and Computer Security\\
+Department of Computer Science and Engineering\\
+The State University of New York at Buffalo,
+Buffalo, NY 14260-1660\\
+\IEEEauthorblockA{\IEEEauthorrefmark{1}
+Email: agautam2@buffalo.edu}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}
+Email: armaango@buffalo.edu}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}
+Email: riazmuns@buffalo.edu}
+\IEEEauthorblockA{\IEEEauthorrefmark{4}
+Email: vyomchha@buffalo.edu}}
+
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+
+Quantum Computers have the power to use algorithms that break classical public-key algorithms whose secrecy depends on some hard mathematical problems, unsolvable by today's computers. Existence of quantum computers will threaten the entire security system that exists and leads to major work being done on post-quantum cryptographic algorithms which refers to using conventional non-quantum cryptographic algorithms that remain secure even after practical quantum computing is a reality in few years. While several methods have been derived over the years in developing post-quantum cryptographic algorithms but at a cost of large key-size and algorithm primitives that are not feasible given the time consumed in key generation and encryption. We propose to analyze security characteristics in 1. Code-based 2. Hash-based 3. Multi-Variate Quadratic 4. Lattice Based Post-Quantum Cryptographic Algorithms. We further deal with lattice based cryptographic signature schemes and work on mitigating Post-Quantum primitives to resource-constrained devices and analyze security characteristics in great details.
+
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+
+%\end{IEEEkeywords}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+Imagine that its fifteen years from now and someone announces the successful construction of a large quantum computer. Which would necessary mean that all of the public-key algorithms used to protect the Internet have been broken. But, could this be an end to the word cryptography, the science behind the secrecy of communication over public networks like the Internet.Perhaps, after seeing quantum computers destroy RSA and DSA and ECDSA, Internet users will leap to the conclusion that cryptography is dead; that there is no hope of scrambling information to make it incomprehensible to, and unforgettable by, attackers; that securely storing and communicating information.
+A closer look reveals, however, that there is no justification for the leap from quantum computers to destroy RSA and DSA and ECDSA.\\
+\\
+Post-Quantum Cryptographic algorithms that can be optimized to work on highly constrained hardware is an active area of research and we propose to do a comparative study on the various post-quantum security schemes that have been studies over the years, their security proof and optimizations that could be made to make these algorithms lightweight yet post-quantum safe.\\
+\\
+Next, we discuss Lattice-based cryptography and Hash-based cryptography and describe our motivation to work towards various Lattice-based models.
+
+\subsection{Lattice-based cryptography}
+This approach includes cryptographic systems such as Learning with Errors, Ring-Learning with Errors (Ring-LWE), the older NTRU or GGH encryption schemes, and the newer NTRU signature and BLISS signatures. Some of these schemes like NTRU encryption have been studied for many years without anyone finding a feasible attack. Others like the Ring-LWE algorithms have proofs that their security reduces to a worst-case problem.
+\subsection{Hash-based cryptography}
+This includes cryptographic systems such as Lamport signatures and the Merkle signature scheme. Hash based digital signatures were invented in the late 1970s by Ralph Merkle and have been studied ever since as an interesting alternative to number theoretic digital signatures like RSA and DSA. Their primary drawback is that for any Hash based public key, there is a limit on the number of signatures that can be signed using the corresponding set of private keys. This fact had reduced interest in these signatures until interest was revived due to the desire for cryptography that was resistant to attack by quantum computers. There appear to be no patents on the Merkle signature scheme and there exist many non-patented hash functions that could be used with these schemes.\\
+\\
+
+Our motivation is, doing comparative implementations of lattice based cryptography techniques focusing on their versatile average case problem. 
+We have focused on the comparative study of the implementation of Ring-LWE and bi-modal lattice signature schemes (BLISS) which appears to be promising lattice based security schemes that could work on constrained hardware. Since the number theoretic transform (NTT) is one of the core components in implementations of lattice-based cryptosystems, we will be using Raspberry Pi B+ Version and some basic Networking Hardware and reviewing techniques to apply approximations to get similar results at a shorter time, by attempting to reducing time of the polynomial multiplication. We also touch upon the security proofs of lattice based cryptography, bounding the closeness of two probability distributions (e.g., zero centered and non-zero centered discrete Gaussian distributions)\\
+\\
+The document is divided into 6 sections. Section I covered the introduction. Section II discusses some preliminaries. Section III has related work followed by the implementation details in Section IV. Section V discusses evaluations and results and lastly we have our conclusions and findings.
+
+
+\section{Preliminaries}
+\subsection{The Post Quantum Era}
+Quantum computing studies theoretical computation systems which make direct use of quantum-mechanical phenomena, such as superposition and entanglement, to perform operations on data. Quantum computers are different from digital electronic computers based on transistors. Whereas digital computers require data to be encoded into binary digits (bits), each of which is always in one of two definite states (0 or 1), quantum computation uses quantum bits (qubits), which can be in superpositions of states
+Post-quantum cryptography refers to cryptographic algorithms (usually public-key algorithms) that are thought to be secure against an attack by a quantum computer. 
+\subsection{Lattice}
+A lattice L in real analysis is a set of points in the n-dimensional Euclidean space $R_n$ with a strong periodicity property.
+\subsection{Lattice Based Cryptography}
+Lattice-based cryptography is the generic term for asymmetric cryptographic primitives based on lattices. While lattice-based cryptography has been studied for several decades, there has been renewed interest in lattice-based cryptography as prospects for a real quantum computer improve. A basis of L is a set of vectors such that any element of L is uniquely represented as their linear combination with integer coefficients.
+\subsection{Constrained Device}
+Small devices with limited CPU, memory, and power resources, so called constrained devices (also known as sensor, smart object, or smart device).
+\subsection{Shortest Vector Problem (SVP)}
+In $SVP$, a basis of a vector space V and a norm $N$ (often $L^2$) are given for a lattice $L$ and one must find the shortest non-zero vector in $V$, as measured by $N$, in $L$. In other words, the algorithm should output a non-zero vector $v$ such that $N(v)=\lambda(L)$.
+
+In the $\gamma$-approximation version $SVP_\gamma$, one must find a non-zero lattice vector of length at most $\gamma \lambda(L)$.
+\subsection{Closest Vector Problem (CVP)}
+In CVP, a basis of a vector space $V$ and a metric $M$ (often $L^2$) are given for a lattice $L$, as well as a vector $v$ in $V$ but not necessarily in L. It is desired to find the vector in $L$ closest to $v$ (as measured by $M$). In the $\gamma$-approximation version $CVP_\gamma$, one must find a lattice vector at distance at most $\gamma$.\\
+The $CVP$ is a generalization of the $SVP$. It is easy to show that given an oracle for $CVP_\gamma$, one can solve $SVP_\gamma$ by making some queries to the oracle.
+\subsection{Learning with Errors (LWE)}
+Learning with errors (LWE) [2] is a generalization of the parity learning problem,  in machine learning that is conjectured to be hard to solve.
+An algorithm is said to solve the LWE problem if, when given access to samples (x,y) where $x\in \mathbb{Z}_q^n$ and $y\in \mathbb{Z}_q$, with the assurance, for some fixed linear function $f:\mathbb{Z}_q^n \rightarrow \mathbb{Z}_q$, that $y=f(x)$ with high probability and deviates from it according to some known noise model, the algorithm can recreate f or some close approximation of it with high probability.
+\section{Related Work}
+Since the seminal work of Ajtai , lattice-based cryptography has attracted much attention
+from the cryptography community. Provably-secure lattice-based schemes have a remarkable feature
+that their securities are proved assuming a basic lattice problem is hard in the worst-case. This type
+of assumption is more reliable than average-case hardness assumptions in number-theoretic schemes
+supported by a security proof. Moreover, lattice-based cryptography is one of the main candidates
+for post-quantum cryptography. No efficient quantum algorithm has been found yet to break lattice-based
+schemes. In contrast, widely used schemes in practice, such as RSA or elliptic curve (EC) based constructions which are based on the hardness of factoring or discrete logarithm, will be broken upon
+appearance of large-scale quantum computers.\\
+\\
+Early proposed lattice-based schemes with a heuristic security analysis were more
+efficient than RSA and EC-based ones. However, initial provably-secure lattice-based schemes were
+suffering from heavy computation and large key sizes. A major event in the development of lattice-based
+cryptography is the introduction of ideal lattices. An ideal lattice has extra algebraic structure
+which reduces the key size and computation time to a sub-quadratic order. Moreover, cryptographic
+schemes based on ideal lattices enjoy a security proof assuming worst-case hardness of basic problems
+on ideal lattices. It is in contrast to the NTRU encryption, which is a well-known and efficient
+lattice-based scheme. The security of NTRU is not proven and is preserved heuristically.
+
+\vspace{2mm}
+
+Recent noticeable improvements on the efficiency of provably-secure lattice-based constructions
+have made it possible to port these schemes to constrained devices such as smart cards and micro-controllers.
+
+\vspace{2mm}
+
+The performance results on the smart card as per the previous work [1], show that the decryption of LP-LWE, as a provably secure
+and patent-free lattice-based encryption, is 4.4 times faster than the NTRU decryption, and its encryption performance is comparable to NTRU. Moreover, the key generation of NTRU is much
+slower. Results in Section 5.3 indicate that the LP-LWE decryption is also 1.8 times faster than a
+simplified CPA-secure version of NTRU. This shows that recent progress on improving efficiency of
+provably-secure lattice-based cryptography has made it comparable to and even better than the famous
+NTRU crypto-system.
+\section{Implementation}
+
+\subsection{NTRU}
+NTRU is a post quantum safe cryptosystem which works basically on the truncated ring polynomial algorithm. The Encryption process uses a mixing system based on polynomial algebra and reduction modulo two numbers p and q, while the decryption procedure uses an unmixing system whose validity depends on probability theory. The security of the NTRU public key cryptosystem comes from the interaction of the polynomial mixing system with the independence of the reduction modulo p and q. Security also relies on the fact that for most lattices, it is very difficult to find extremely short vectors.
+NTRU fits into the general framework of a probabilistic cryptosystem. This means that encryption includes a random element, so each message has many possible encryptions. Encryption and decryption with NTRU are extremely fast and key creation is fast and easy. NTRU takes O$(N^2)$ operations to encrypt or decrypt a message block of length N, making it considerably faster than the O$(N^3)$ operations required by RSA. Further, NTRU key lengths are O$(N)$ which compares well with the O$(N^2)$ key lengths required by other fast public key systems.
+
+Next we explain in brief the basic Key Gen, Enc and Dec algorithms for NTRU.
+
+\textbf{KEY Creation}: To create an NTRU key, we choose 2 random polynomials f,g $ \in L_g$. The polynomial f must satisfy the additional requirement that it have inverses modulo q and modulo p. For suitable parameter choices, this will be true for most choices of f and the actual computation of these inverses is easy using a modification of the Euclidean algorithm. We will denote these inverses by $F_q$ and $F_p$, that is,\\
+
+ $F_q * f$ $\equiv$ 1 $\big($mod q$\big)$ and $F_p * f$ $\equiv$ 1 $\big($mod p$\big)$ \\
+\\
+Next we compute the quantity \\
+\\ h$\equiv F_q * g$ $\big($mod q$\big)$ \\
+The public key is the polynomial h and private key is the polynomial f.
+
+\textbf{Encryption}: Now when a user needs to send a message, he begins by selecting a message m from the set of plaintexts $L_m$. Next he randomly chooses a polynomial $\phi \in L_\phi$ and uses the public key generated in the previous step (h) to compute\\
+\\ $e \equiv p\phi * h + m$ $\big($mod q$\big)$.\\
+
+This is the encrypted message transmitted by the sender to the receiver.\\
+
+\textbf{Decryption}: Now when the receiever has received the message e from the sender and he wants to decrypt it using his private key f as derived earlier in the key generation process. To do this efficiently, he should have pre computed the polynomial $F_p$.
+\\ In order to decrypt e he first computes,\\
+$a \equiv f * e $ $\big($mod q$\big)$ , \\
+where he chooses the coefficients of a in the interval from $-q/2$ to $q/2$. Now treating a as a polynomial with integer co efficients, he recovers the message by computing, \\
+\\ $F_p *a $ $\big($mod p$\big)$.
+
+\textbf{Practical Implementations of NTRU}: Here we present three distinct sets of parameters which yield different levels of security. the norms of f and g have been chosen so that decryption failure occurs with probablilty less than 5.$10^{-5}$
+Case A: Moderate Security:
+The moderate security parameters are suitable for situations in which the intrinsic value of any individual message is small and in which keys will be changed with reasonable frequency. Examples might include encrypting of television pager and cellular telephone transmissions.\\
+ (N,p,q)= (107,3,64)\\
+ $L_f = L(15,14) , L_g = L(12,12), L_\phi = L(5,5) $\\
+
+These give key sizes:\\
+Private key= 340 bits and Public key = 642 bits,\\
+and (meet in the middle) security levels \\
+Key security = $2^{50}$ and Message security = $2^{26.5}$
+
+Case B: High Security
+\\
+(N,p,q)= (167,3,128)\\
+ $L_f = L(61,60) , L_g = L(20,20), L_\phi = L(18,18) $\\
+ Private key = 530 bits and Public key = 1169 bits\\
+ Key security = $2^{82.9}$ and Message security = $2^{77.5}$\\
+ 
+ Case C: Highest Security
+ \\
+(N,p,q)= (503,2,256)\\
+ $L_f = L(216,215) , L_g = L(72,72), L_\phi = L(55,55) $\\
+ Private key = 1595 bits and Public key = 4024 bits\\
+ Key security = $2^{285}$ and Message security = $2^{170}$\\
+ 
+\subsection{U-LP}
+As previously stated, lattice-based cryptography is the generic term for asymmetric cryptographic primitives based on lattices.\\
+LP relies on the hardness of the learning with errors (LWE) problem and uses discrete Gaussian sampling for noise and secret generation. Lindner and Peikert proposed their provably secure LP encryption scheme, which is based on the LWE problem and samples error from a discrete Gaussian distribution $D_{z\sigma}$ with standard deviation $\sigma$.
+
+We performed analyses on the U-LP cryptosystem code [3] repository and that creates a generic library for using this cryptosystem in practice. Post analysis we have implemented the key generation encryption, decryption in Python (for the normal variant as well as for the ring-LWE variant). \\
+\\
+The public and private keys are generated by sampling random data and error rates $e_1$, $e_2$, $e_3$ are randomly sampled from Gaussian Distribution.\\
+\\
+
+U-LP, gathers noise (error), and secret from a uniform distribution, instead of a discrete Gaussian. This allows a 1. Simpler implementation, 2. Precludes decryption failures and 3. Gives hope for more efficient operations due to the simpler sampling. U-LP will require a bigger data set so it conforms to the security standards. U-LP is worst-case secure regarding standard lattice problems.
+In U-LP an equivalent ring based analogue was proposed that lead to notable smaller key sizes and performance increases.
+Below are the mathematical notations U-LP Key Generation, Encryption and Decryption and for its Ring Key analogue:
+
+\begin{itemize}
+    \item \textbf{Key Generation:}
+    Sample $A\leftarrow U^{nXn}_q$, $E\leftarrow U_{s_k}^{lXn}$ Compute $P=E-S·A \in Z_q^{lXn}$.
+The public key is (A, P), the private key is S.
+\item \textbf{Encryption:}
+To encrypt an l bit message m, sample $e_1 \leftarrow U_{s_e}^n$ , $e_1 \leftarrow U_{s_e}^n$ $e_3\leftarrow U_{s_e}^l$, and set
+$m' = encode(m) \in Z_q^l$. The ciphertext $c = (c_1, c_2)$ is computed as follows: $c_1 = A · e_1 + e_2$ and $c_2 = P·e_1 + e_3 + m'$
+\item \textbf{Decryption:}
+For decryption, compute and return $decode(S·c_1 + c_2) \in  Z_2^l$.
+\end{itemize}
+
+\textbf {Mathematical notations related to Ring U-LP:}
+
+\begin{itemize}
+    \item \textbf{Ring Key Generation:}
+    Sample $a \leftarrow U_q^n$ , $e \leftarrow U_{s_k}^n$, and $s \leftarrow U_{s_k}^n$. Calculate $p=e-s·a \in  R_q$
+The public key is $(a, p)$, the private key is $s$
+\item \textbf{Ring Encryption:}
+To encrypt $n$ bit message $m$, sample $e_1 \leftarrow U_{s_e}^n$, $e_2 \leftarrow U_{s_e}^n$ and $e_3 \leftarrow U_{s_e}^n$
+Set $m' = encode(m)$ The ciphertext $c=(c1, c2)$, is computed as follows: $c1=a·e1 + e2$ and
+$c2 = p · e1 + e3 + m'$.
+\item\textbf{Ring Decryption}
+For decryption, compute and return $decode(s · c1 + c2) \in  Z_2^n$.
+\end{itemize}
+
+\subsection{LP}
+Lindner and Peikert proposed their provably secure LP encryption scheme, which is based on the LWE problem and samples error from a discrete Gaussian distribution $D_{Z,\sigma}$ with standard deviation $\sigma$. In the following, n denotes the security parameter, l the message
+length, and q the modulus. Additionally, a pair of error-tolerant encoding/decoding functions are part of the implementation.
+
+\textbf{Cryptosystem}
+
+The cryptosystem involves a few parameters: an integer modulus $q \geq 2$ and integer dimensions $n1, n2 \geq 1$, which relate to the underlying LWE problems; Gaussian parameters $s_k and s_e$ for key generation and encryption, respectively; and a message alphabet $\sum$ (for example, $\sum$ = {0, 1}) and message length $l \geq 1$. We also require a simple error-tolerant encoder and decoder, given by functions encode : $\sum \rightarrow Z_q$ and decode : $Z_q \rightarrow \sum$, such that for some large enough threshold $t \geq 1$, decode(encode(m) + e mod q) = m
+for any integer $e \in [−t, t)$. For example, if $\sum$ = {0, 1}, then we can define encode(m) := m.$\lfloor \frac{q}{2} \rfloor$, and decode($\overline{m}$) := 0 if $\overline{m} \in \lbrack − \frac{q}{4} \subset Z_q$, and 1 otherwise. This method has error tolerance $t = \lfloor \frac{q}{4} \rfloor$. We also extend encode and decode to vectors, component-wise. 
+
+To get the smallest public keys, our system makes use of a uniformly random public matrix $\overline{A} \in Z^{n1×n2}_q$ that is generated by a trusted source, and is used by all parties in the system. If there is no trusted source, then $\overline{A}$ may be chosen by the users themselves as part of key generation, and included in the public key. Next, we will describe the mathematical notations and the algorithm related to U-LP cyptosystem:
+\\
+\\
+\\
+\\
+\textbf{GEN($\overline{A} , 1^l$):} choose $R_1 \rightarrow D^{n_1 \times l}_{Z,s_k}$ and $R_2 \rightarrow D^{n_2 \times l}_{Z,s_k}$. and let P = $R_1 - \overline{A} . R_2 \in Z^{n_1 \times l}_{q}$ The public key is P (and $\overline{A}$, if needed), and the secret key is $R_2$. In matrix form, the relationship between the public and secret keys is:
+
+\begin{center}
+$\left[
+\begin{array}{cc}
+   \overline{A}  &  P
+\end{array}
+\right] .
+\left[
+\begin{array}{c}
+   R_2  \\ 
+   I
+\end{array}
+\right] = R_1$ mod q.
+\end{center}
+
+\textbf{ENC($\overline{A}$ ,P,m $\in \sum^l$):} choose $e = (e_1, e_2, e_3) \in Z^n1 \times Z^n2 \times Z^l$ with each entry drawn independently
+from $D_{Z,s_e}$. Let $\overline{m}$ = encode(m) $\in Z^l_q$, and compute the ciphertext 
+
+\begin{center}
+$c^t = 
+\left[
+\begin{array}{cc}
+   c^t_1 & c^t_2
+\end{array}
+\right] =
+\left[
+\begin{array}{ccc}
+   e^t_1 & e^t_2 & e^t_3 + \overline{m}^t 
+\end{array}
+\right] .
+\left[
+\begin{array}{cc}
+   \overline{A}  &  P \\
+   I &   \\
+     & I \\
+\end{array}
+\right]
+\in Z^{I \times (n_2 + l)}_q$
+\end{center}
+
+\textbf{DEC($c^t = 
+\left[
+\begin{array}{cc}
+   c^t_1 & c^t_2
+\end{array}
+\right],R_2$)}:
+output decode ${(c_1^t . R_2 + c_2^t)}^t \in \sum^l$.
+Using Equation in ENC followed by Equation in GEN, we are applying decode to
+
+\begin{center}
+$\left[
+\begin{array}{cc}
+   c^t_1 & c^t_2
+\end{array}
+\right] .
+\left[
+\begin{array}{c}
+    R_2 \\ 
+    I
+\end{array}
+\right] = (e^t + 
+\left[
+\begin{array}{ccc}
+   0 & 0 & \overline{m}^t 
+\end{array}
+\right] ).
+\left[
+\begin{array}{c}
+    R_1 \\
+    R_2 \\ 
+    I
+\end{array}
+\right] = e^t.R + \overline{m}^t$
+\end{center}
+
+where R = 
+$\tiny\left[
+\begin{array}{c}
+    R_1 \\
+    R_2 \\ 
+    I
+\end{array}
+\right]$.
+Therefore, decryption will be correct as long as each |$\langle e,r_j \rangle$| < t, the error threshold of decode.
+
+\subsection{BLISS}
+In this work we only consider the efficient ring-based instantiation of BLISS. Key generation requires uniform sampling of sparse and small polynomials f, g, rejection sampling (N(S)), and computation of an inverse. To sign a message, two masking polynomials y1, y2 → DZn,sigma are sampled from a discrete Gaussian distribution using the SampleGauss function. The computation of ay1 is performed using the NTT and the compressed u is then hashed together with the message by Hash. The binary string c 0 is used by GenerateC to generate a sparse polynomial c. Polynomials y1, y2 then hide the secret key which is multiplied with the sparse polynomials using the SparseMulfunction. This function exploits that only coefficients in c are set and only d1 + d2 coefficients in s1 and s2. \\
+\\
+After a rejection sampling and compression step the signature (z1, z 2 , c) is returned. The verification procedure BLISSver in Algorithm 6 just checks norms of signature components and compares the hash output with c in the signature. In this work we focus on the 128-bit prequantum secure BLISS-I parameter set which uses n = 512 and q = 12289 (same base parameters as RLWEencIIa). The density of the secret key is 1 = 0.3 and 2 = 0, the standard deviation of the coefficients of y1 and y2 is = 215.73 and the repetition rate is 1.6. The number of dropped bits in z2 is d = 10, = 23, and p = b2q/2 d c. The final size of the signature is 5,600 bits with Huffman encoding and approx. 7,680 bits without Huffman encoding.\\
+\\
+We did a comparison-based study of Hash and Sign signature schemes and Fiat Shamir signature schemes and analysed the performance of both the schemes. Our findings are:
+Hash and Sign Scheme is Less efficient and its implementation is cumbersome where as Fiat Shamir Signature Schemes are widely understood and they are easy to implement both in software and hardware. Also There are no known serious theoretical attacks on these schemes. They offer features like - high security levels and short signatures/keys, linear impact on performance when scaling parameters, low-cost implementation on ASICs/RFIDs, vulnerability against physical attacks countermeasures. 
+Bliss is also being early adopted. The 3rd party VPN solution, strongswan already has support for Bliss. So this is clearly an interesting candidate for standardization.\\
+\\
+To get a better understanding of the security proof of Bliss, we did some research on the security analysis of Bliss by going through the available material. We studied some combinatorial attacks such as the Brute Force and Meet in the Middle Attack. Here, internal structure is unimportant. An attacker requires the ability to encrypt and decrypt, and the possession of pairs of plaintexts and corresponding ciphertexts. We also studied some lattice reduction attacks and the theory of the hermite constant. We ended our study with some hybrid attacks.
+
+We have further studied the various building blocks of the bliss implementation to study the performance characteristics in detail.
+One of the most fundamental building block of the bliss algorithm is computation of the Numerical Theoretical Transform (NTT) which central role lies in computing the polynomial multiplication. One of the straightforward implementation of NTT that we have studies is Cooley-Tuckey radix-2 decimation-in-time (DIT) approach , which involves a bit reversal step whereby the we bit reverse the input in ordered to produce naturally ordered output.To compute the NTT
+as defined in Section 2.1 the NTTCT
+bo $\leftarrow$no algorithm applies the Cooley-Tukey (CT) butterfly, which computes a
+0 $\rightarrow$ a + $\varphi$b and b
+0 $\rightarrow$ a − $\varphi$b for some values of $\varphi$, a, b ∈ Zq, overall n log2
+(n)
+2
+times.
+The biggest disadvantage of relying solely on the NTTCT
+bo$\rightarrow$no algorithm is the need for bit-reversal,
+multiplication by constants, and that it is impossible to merge the final multiplication by powers of
+$\rightarrow$
+−1
+into the twiddle factors of the inverse NTT. With the assumption that twiddle factors
+(powers of $\rightarrow$) are stored in a table and thus not computed on-the-fly it is possible to further simplify
+the computation and to remove bit-reversal and to merge certain steps.
+\\
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{fig1}
+\caption{NTT Implementation}
+\label{fig:lion}
+\end{figure}
+\\
+Polynomial multiplication is crucial for overall performance.Cooley-Tukey decimation-in-time NTT algorithm requires
+bit-reversa n/2log\textsubscript{2}(n) multiplication in Z\textsubscript{q}.Other ingredients that affect the implementation of this scheme are Discrete Gaussian and Discrete Uniform sampling.
+\\
+The rate of Gaussian Sampling  can be improved by avoiding large tables and costly evaluation of exponential functions.Some of the popular sampling techniques being:
+\begin{enumerate}
+    \item Rejection Sampling  (straight and expensive)
+    \item Bernoulli  (quite efficient and fast)
+    \item Discrete Ziggurat (moderately fast)
+    \item Knuth-Yao (moderately large tables)
+\end{enumerate}
+
+
+Use of Cumulative Distribution Tables , which make use of Convolution theorem to combine values from smaller tables and also implements guide table to accelerate sampling process is the start-of-the-art practice to generate effective Gaussian sampling.
+
+We  further look into the efficient implementation of gaussian sampling for constrained devices, which is crucial for running
+in pace with the hardware constraints.Since its introduction, and with the noticeable exception of NTRU, lattice-based cryptosystems
+operating at a standard security level have remained out of reach of constrained devices by several
+orders of magnitude. A first step towards a practical lattice-based signature scheme was achieved
+by [BLISS] with an implementation on a low-cost FPGA, by avoiding Gaussians, at the cost of
+some compactness and security compared to [NTRU].
+At this time, all known algorithms to sample according to a distribution statistically close to a
+discrete Gaussian distribution on a lattice  require either long-integer arithmetic 
+at some point or large memory storage. Some progress was made in [LCP], showing
+that “lazy techniques” can limit the need for high precision; one can use floating-point numbers at
+double precision (53 bits) most of the time, native on high-end architectures but costly on embedded
+devices.
+Section Outline. The main goal of this section is to show how to efficiently sample discrete Gaussian
+without resorting to large precomputed tables, nor evaluations of transcendental function. The first
+step is being able to sample according to a Bernoulli distribution with bias of the form exp(−x/f)
+(and 1/ cosh(x/f)) without actually computing transcendental functions. The second
+step is to build an appropriate and efficient distribution as input of rejection
+sampling to reduce its rejection rate. Our new algorithm still requires precomputed
+tables, but of much smaller size; precisely of size logarithmic in σ rather than linear.
+
+
+Now we describe the final algorithms needed to realize BLISS.
+
+\begin{algorithm}
+        \caption{BLISS Key Generation}
+        \begin{algorithmic}
+            \STATE Key pair (A,S) such that AS = q mod 2q
+            \STATE Choose f,g as uniform polynomials with d\textsubscript{1} entries in  $\{\pm1\}$ and d\textsubscript{2} entries in  $\{\pm2\}$
+            \STATE $ S = (s1,s2)\textsuperscript{t} \leftarrow (f,2g+1)\textsuperscript{t} $
+            \IF {$N\textsubscript{k}(S) \ge C\textsuperscript{2}.5.(\lceil\delta\textsubscript{1}n\rceil + 4\lceil\delta\textsubscript{2}n\rceil).K $}
+            \STATE restart
+            \ENDIF
+            \STATE a\textsubscript{q} = (2g+1)/f mod q (restart if f is not feasible)
+            \RETURN (A,S) where A = (2a\textsubscript{q},q-2) mod 2q
+        \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{BLISS Signature Algorithm}
+\begin{algorithmic} 
+\REQUIRE Message $\mu, public key A = (a_1, q-2) \in R_{2q}^{1x2}, secret key S = (s_1,s_2)^t \in R_{2q}^{2x1}$
+\ENSURE A signature $(z_1,z_2,c) of the message \mu $
+\STATE $ y_1,y+2 \leftarrow D_z,$
+\STATE $ u = a_1.y_1 + y_2$ mod 2q 
+\STATE $ c \leftarrow H(\lceil u \rceil mod p,\mu) $
+\STATE Choose a random bit b
+\STATE $ z_1 \leftarrow y_1 + (-1)^b.s_1.c$
+\STATE $ z_2 \leftarrow y_2 + (-1)^b.s_2.c$
+\STATE  Continue with probability $ 1/(M exp\left(\frac{-\parallel Sc \parallel ^ 2}{2\sigma^2} \right)^2) $ otherwise restart
+\STATE $ z_2 \leftarrow (\lceil u \rceil - \lceil u - z_2 \rceil)$ mod p 
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{BLISS verification algorithm}
+\begin{algorithmic} 
+\REQUIRE $ Message \mu, public key A = (a,q-2) \in R_{2q}^{1x2}, signature (z\textsubscript{1},z\textsubscript{2},c)$
+\ENSURE  Accept or Reject the signature 
+\IF{$ \parallel(z\textsubscript{1}| 2\textsuperscript{d}.z\textsubscript{2})\parallel > B\textsubscript{2}$}
+\STATE Reject
+\ENDIF
+\IF{$ \parallel(z_1| 2^d .z_2)\parallel > B_{\infty} $ }
+\STATE Reject
+\ENDIF
+\STATE  Accept if c = $H(\lceil a\textsubscript{1}.z\textsubscript{1} + q.c \rceil + z\textsubscript{2} mod p, \mu) $
+\end{algorithmic}
+\end{algorithm}
+
+\section{Evaluation and Discussion}
+
+We have conducted extensive analysis and testing of running of  post-quantum safe as well as non post-quantum algorithms on modern computers as well as constrained devices. We have run classical cryptography algorithms like RSA, ECDSA and measured the performance characterestics and benchmarking on key parameters like time consumed for (1) Key Generation (2) Time taken for Encryption  (3) Time taken for decryption (4) Time taken to verify a signature and so on. Following are some of the results that were obtained running the following algorithms in two different types of hardware platforms (un-constrained and constrained). We also plot the characteristics of the study , following the results.
+
+\begin{enumerate}
+
+\item {Post-Quantum Unsafe methods}
+
+RSA:
+\begin{enumerate}
+\item{Below are the experimental results for RSA  on a 64 bit i5 system}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Str Size & SignKeygen/sec & Sign & Verify \\ [0.5ex] 
+\hline\hline
+512 & 19003 &  0.000015s & 0.000009s\\ 
+\hline
+1024 & 6098 &0.000124s & 0.000080s\\
+\hline
+2048 & 1145 & 0.001529s & 0.000910s\\
+\hline
+4096 & 185 & 0.125789s & 0.004777s \\
+\hline
+8192 & 38 & 0.824619s & 0.010001s\\
+\hline
+\end{tabular}
+\end{center}
+
+\item{ Below are the experimental results for RSA  on a ARMv7 cortex CPU (700Mhz) with 1 GB of RAM.}
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Str size & SignKeygen/sec & Sign & Verify \\ [0.5ex] 
+\hline\hline
+512 & 4364.5 &  0.002215s & 0.000229s\\ 
+\hline
+1024 & 1540.3 &0.011254s & 0.000649s\\
+\hline
+2048 & 439.5 & 0.073529s & 0.002276s\\
+\hline
+4096 & 115.7 & 0.535789s & 0.008645s \\
+\hline
+8192 & 33.4 & 0.824619s & 0.010645s\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+ECDSA:
+\begin{enumerate}
+
+\item{Below are the experimental results for ECDSA after running  on a 64 bit i5 system}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+String size & SignKeygen & Sign & Verify \\ [0.5ex] 
+\hline\hline
+48 & 0.160 & 0.058 & 0.116\\ 
+\hline
+56 & 0.230 & 0.086 & 0.165\\
+\hline
+64 & .305 & 0.112 & 0.220\\
+\hline
+96 & .801 & 0.289 & 0.558s\\
+\hline
+132 & 1.582 & 0.584 & 1.152\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+\item{ Below are the experimental results for ECDSA after running on a ARMv7 cortex CPU (700Mhz) with 1 GB of RAM.}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+String size & SignKeygen & Sign & Verify \\ [0.5ex] 
+\hline\hline
+48 & 0.520 & 0.201 & 0.574\\ 
+\hline
+56 & 0.890 & 0.620 & 0.782\\
+\hline
+64 & .1205 & 0.512 & 0.926\\
+\hline
+96 & 3.206 & 0.899 & 2.001\\
+\hline
+132 & 4.782 & 2.012 & 4.789\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+
+\item {Post-Quantum Safe methods}
+
+NTRU:
+\begin{enumerate}
+
+\item{Below are the experimental results for NTRU after running a java based implementation on a 64 bit i5 system}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+String size & SignKeygen/sec & Sign/sec & Verify/sec \\ [0.5ex] 
+\hline\hline
+256 & .49 & 947.87 & 950.5\\ 
+\hline
+256 & .45 & 765.56 & 740.8\\
+\hline
+128 & .57 & 879.4 & 869.8\\
+\hline
+128 & .52 & 734.5 & 768.7\\
+\hline
+64 & .67 & 1102 & 1105\\
+\hline
+64 & .64 & 1056.7 & 1033.5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item{ Below are the experimental results for NTRU after running a java based implementation on a ARMv7 cortex CPU (700Mhz) with 1 GB of RAM.}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+String size & SignKeygen/sec & Sign/sec & Verify/sec \\ [0.5ex] 
+\hline\hline
+256 & .01 & 212.12 & 200.5\\ 
+\hline
+256 & .01 & 120.56 & 156.8\\
+\hline
+128 & .02 & 140.4 & 123.8\\
+\hline
+128 & .02 & 230.5 & 189.7\\
+\hline
+64 & .02 & 456 & 250\\
+\hline
+64 & .02 & 500.7 & 256.5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+U-LP:
+\begin{enumerate}
+
+\item { Below are the experimental results for U-LP, running on a 64bit i7 system }
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Sec Param & String Size & Enc/sec & Dec/sec \\ [0.4ex] 
+\hline\hline
+256 & 256 & 219.338 & 2037.971\\ 
+\hline
+256 & 1000 & 231.893  & 2085.035\\
+\hline
+328 & 256 & 171.537 & 1629.108\\
+\hline
+328 & 1000 & 183.184 & 1625.030\\
+\hline
+412 & 256 & 136.768 & 1297.041\\
+\hline
+412 & 1000 & 148.146 & 1298.702\\
+\hline
+\end{tabular}
+\end{center}
+
+\item {Below are the experimental results for U-LP , running on a ARMv7 cortex CPU (700Mhz) with 1 GB of RAM. }
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Sec Param & String Size & Enc/sec & Dec/sec \\ [0.4ex] 
+\hline\hline
+256 & 256 & 37.21 & 211.71\\ 
+\hline
+256 & 1000 & 39.119  & 204.54\\
+\hline
+328 & 256 & 29.89 & 152.81\\
+\hline
+328 & 1000 & 27.90 & 149.30\\
+\hline
+412 & 256 & 19.1 & 145.0\\
+\hline
+412 & 1000 & 20.1 & 143.8\\
+
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+LP:
+\begin{enumerate}
+
+\item { Below are the experimental results for LP, after running on a 64bit i7 system. }
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Sec Param & String Size & Enc/sec & Dec/sec \\ [0.4ex] 
+\hline\hline
+80 & 256 & 786.040 & 6732.430 \\ 
+\hline
+80 & 1000 & 807.5927  & 6886.294\\
+\hline
+128 & 256 & 478.147 & 4183.339 \\
+\hline
+128 & 1000 & 505.622 & 4378.187\\
+\hline
+160 & 256 & 382.037 & 3425.254\\
+\hline
+160 & 1000 & 394.996 & 3525.049\\
+\hline
+\end{tabular}
+\end{center}
+
+\item {Below are the experimental results for LP , running on a ARMv7 cortex CPU (700Mhz) with 1 GB of RAM. }
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Sec Param & String Size & Enc/sec & Dec/sec \\ [0.4ex] 
+\hline\hline
+80 & 256 & 106.040 & 980.450 \\ 
+\hline
+80 & 1000 & 98.3  & 910.123\\
+\hline
+128 & 256 & 63.2 & 612.89 \\
+\hline
+128 & 1000 & 75.78 & 654.89\\
+\hline
+160 & 256 & 53.03 & 511.89\\
+\hline
+160 & 1000 & 49.26 & 3525.049\\
+ &  &  & \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+BLISS:
+
+\begin{enumerate}
+
+\item{Below are the experimental results for BLISS, after running on a 64bit i7 system.}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Sec Param & String Size & Enc/sec & Dec/sec \\ [0.4ex] 
+\hline\hline
+128 & 9.6kb & 99814.1  & 20334.12\\ 
+\hline
+128 & 5.6kb & 9823.2 &  19233.12 \\
+\hline
+160 & 5kb & 12965.89 &  20152.99\\
+\hline
+196 & 6kb & 11008.10 &  18922.11  \\
+\hline
+\end{tabular}
+\end{center}
+
+\item{Below are the experimental results for BLISS , running on a ARMv7 cortex CPU (700Mhz) with 1 GB of RAM.}
+
+\begin{center}
+\small
+\begin{tabular}{||c c c c||} 
+\hline
+Sec Param & String Size & Sign/sec & Ver/sec \\ [0.4ex] 
+\hline\hline
+128 & 9.6kb & 4234.1  & 8232.23\\ 
+\hline
+128 & 5.6kb & 2123.2 & 8122.12 \\
+\hline
+160 & 5kb & 4765.89 & 7212.67\\
+\hline
+196 & 6kb &  2908.10 & 7200.15  \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{graph}
+\caption{LP on x86 vs LP on arm V7 }
+\label{fig:graph}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=10cm]{graph2}
+\caption{ULP on x86 vs ULP on arm V7 }
+\label{fig:graph2}
+\end{figure}
+
+\section{Conclusions}
+
+Over the course of this project, our team has researched on a variety of algorithms available and have analysed which of them are quantum computer safe. We selected a couple of algorithms like NTRU, LP, ULP and BLISS.\\
+We analysed the security proofs of these algorithms and then we moved on to the implementation part of the algorithms. We found a couple of different implementations for all the selected algorithms. We implemented the codes for some of those algorithms ourselves and then moved on to the analysis phase.\\
+
+We ran the implementations first on our normal machines, i5 or i7 processors and then implemented them on our constrained device, the Raspberry pi.
+Based on our analysis for the comparisons with our results for these algorithms with the results for traditional algorithms like RSA and AES, we found that since these algorithms provide security against Quantum Computers, they have great efficiency.\\
+Out of the selected algorithms we found that based on the ease of implementations both in software and hardware and also the performance, we found that BLISS is the most effective algorithm and the best choice among all four selected algorithms.
+We feel that there can be a lot of more future work in improving the implementation of the BLISS algorithm.\\
+
+
+
+
+\section*{Acknowledgment}
+
+
+The authors would like to thank Aziz Mohaisen, Assistant Professor, Department of Computer Science and Engineering, at The State University of New York at Buffalo, for his help, guidance and motivation to make this experimental research project a success.
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{10}
+\bibitem{NTRU Details}
+NTRU- A ring based public key Crypto Jeffery Hoffstein, Jill Pipher, Joseph H. Silverman\\
+$https://www.securityinnovation.com/uploads/Crypto/ANTS97.pdf$
+
+
+\bibitem{BLISS }
+Lattice Signatures and Bimodal Gaussians\\
+$http://eprint.iacr.org/2013/383.pdf$
+
+\bibitem{QSH Implementation} 
+A quantum-safe circuit-extension handshake for Tor
+
+$https://eprint.iacr.org/2015/287.pdf$
+
+\bibitem{LP}
+Better Key Sizes (and Attacks) for LWE-Based Encryption.
+Richard Lindner and Chris Peikert.\\
+$http://web.eecs.umich.edu/~cpeikert/pubs/lwe-analysis.pdf$
+
+\bibitem{LWE}
+The Learning with Errors Problem. Oded Regev.\\
+$http://www.cims.nyu.edu/~regev/papers/lwesurvey.pdf$
+
+\bibitem{BKW}
+A. Blum, A. Kalai, and H. Wasserman. Noise-tolerant learning, the parity problem, and the statistical query model.\\
+$http://research.microsoft.com/en-us/um/people/adum/publications/2003-Noise-Tolerant_Learning.pdf$
+
+\bibitem{BKW imp}
+An Improved BKW Algorithm for LWE with Applications to Cryptography and Lattices. Paul Kirchner and Pierre-Alain Fouque.\\
+$https://eprint.iacr.org/2015/552.pdf$
+
+\bibitem{AB}
+Accelerating Bliss: the geometry of ternary polynomials.\\
+$https://eprint.iacr.org/2014/874.pdf$
+
+\bibitem{PL DSS}
+Practical Lattice-based Digital Signature Schemes\\
+$http://csrc.nist.gov/groups/ST/post-quantum-2015/papers/session9-oneill-paper.pdf$
+
+
+\bibitem{LCP SC}
+On Constrained Implementation of Lattice-based Cryptographic Primitives and Schemes on Smart Cards.\\
+$https://eprint.iacr.org/2014/514.pdf$
+
+
+\bibitem{PMF PQC}
+Precomputation Methods for Faster and
+Greener Post-Quantum Cryptography on
+Emerging Embedded Platforms\\
+$https://eprint.iacr.org/2015/288.pdf$
+
+
+\bibitem{LSS PSI}
+An Efficient Lattice-Based Signature Scheme with Provably Secure Instantiation\\
+$https://eprint.iacr.org/2016/030.pdf$
+
+\bibitem{HP ILC}
+High-Performance Ideal Lattice-Based Cryptography on 8-bit
+ATxmega Microcontrollers\\
+$https://pdfs.semanticscholar.org/c6e3/46084b7f06929d67f1dac2ab7a3dde02912b.pdf$
+
+\bibitem{PLC SS ES}
+Practical Lattice-Based Cryptography:
+A Signature Scheme for Embedded Systems
+$https://eprint.iacr.org/2015/1132.pdf$
+
+\bibitem{U-LP repo}
+U-LP git repo\\
+$https://github.com/gautamgitspace/ulpcrypt$
+
+\end{thebibliography}
+
+
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
+\blindtext
+\end{IEEEbiography}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+
+% that's all folks
+\end{document}
+
+
